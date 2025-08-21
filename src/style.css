@@ -1,0 +1,134 @@
+@font-face {
+  font-family: 'Galmuri14';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2506-1@1.0/Galmuri14.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* General Page Styles */
+body {
+  margin: 0;
+  font-family: Galmuri14;
+}
+
+/* Sections */
+section {
+  padding: 50px 0;
+}
+
+/* --- TOP SECTION --- */
+.top-section {
+  height : 800px;
+  background: linear-gradient(180deg, #F65CC3, #FCC8EB);
+}
+
+.group-image {
+  max-width: 400px;
+  width: 100%;
+  margin : 0 auto 50px;
+  display: block;
+}
+
+.welcome-text {
+  font-size: 2.5rem;
+  align-items: center;
+  text-align: center;
+  animation: floatText 3s ease-in-out infinite;
+}
+
+@keyframes floatText {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* --- MIDDLE SECTION --- */
+.middle-section {
+  height : 800px;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(180deg, #FCC8EB, #FDE4F5)
+}
+
+.topic-text {
+  font-size: 2rem;
+  animation: floatText 3s ease-in-out infinite;
+}
+
+.description-text {
+
+  font-size: 1rem;
+  animation: floatText 3s ease-in-out infinite;
+}
+
+.slider {
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 90s linear infinite;
+}
+
+.thumbnail {
+  min-width: 100px;
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.thumbnail img {
+  width: 90%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%); /* 전체 길이의 절반만 이동 */
+  }
+}
+
+
+/* --- BOTTOM SECTION --- */
+.bottom-section {
+  height : 800px;
+  background: linear-gradient(180deg, #FDE4F5, #FFFFFF)
+}
+
+.streamers {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.streamer-block {
+  width: 25%;
+  height: 800px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  transition: transform 0.3s ease;
+  border-radius: 10px;
+}
+
+.streamer-block:hover {
+  transform: scale(1.05);
+}
+
+.streamer-name {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: white;
+  padding: 5px;
+  font-size: 1.2rem;
+}
