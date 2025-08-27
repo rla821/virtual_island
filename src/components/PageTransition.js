@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 
 export default function PageTransition({ children, duration = 0.5 }) {
+  window.scrollTo({ top: 0, behavior: "smooth" });
   return (
     <motion.div
       initial={{ opacity: 0 }}
