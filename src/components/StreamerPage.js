@@ -22,7 +22,7 @@ export default function StreamerPage({ file }) {
         transition={{ duration: 0.5, ease: "easeInOut" }}
         style={{ height: "100vh", padding: "20px" }}
       >
-        <ReactMarkdown> {content} </ReactMarkdown>
+        <ReactMarkdown>{content}</ReactMarkdown>
 
         <button
           onClick={() => navigate("/")}
