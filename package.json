@@ -1,6 +1,7 @@
 {
-  "name": "react",
+  "name": "react-app",
   "version": "1.0.0",
+  "private": true,
   "description": "",
   "keywords": [],
   "main": "src/index.tsx",
@@ -37,5 +38,6 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "homepage": "https://rla821.github.io/virtual_island"
 }
