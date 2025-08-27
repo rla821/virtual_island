@@ -12,13 +12,19 @@
     "prop-types": "15.8.1",
     "react-router-dom": "7.7.1",
     "framer-motion": "12.23.12",
-    "react-markdown": "10.1.0"
+    "react-markdown": "9.0.1",
+    "vfile": "5.3.7",
+    "@electric-sql/pglite": "0.3.7",
+    "react-refresh": "0.17.0"
   },
   "devDependencies": {
     "@types/react": "19.0.0",
     "@types/react-dom": "19.0.0",
     "loader-utils": "3.2.1",
     "typescript": "5.7.2"
+  },
+  "resolutions": {
+    "vfile": "5.3.7"
   },
   "scripts": {
     "start": "react-scripts start",
