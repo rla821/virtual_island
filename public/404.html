@@ -7,9 +7,7 @@
     <title>Redirecting...</title>
     <script>
       (function () {
-        // Attempt to load an index.html file from several candidate locations so the SPA
-        // can be bootstrapped for any deep link. This handles project Pages (e.g. /repo)
-        // and user/custom domains (root).
+        // Try to fetch index.html from candidate locations so SPA can bootstrap for deep links.
         function tryFetchIndex(path) {
           return fetch(path, { cache: 'no-store' }).then(function (res) {
             if (res.status === 200) return res.text();
@@ -18,29 +16,23 @@
         }
 
         var pathname = location.pathname || '/';
-        // Build a list of candidate index paths to try. Start with root /index.html,
-        // then progressively try /firstSegment/index.html, /first/second/index.html, etc.
         var segments = pathname.split('/').filter(function (s) { return s.length > 0; });
         var candidates = ['/index.html'];
         for (var i = 0; i < segments.length; i++) {
           candidates.push('/' + segments.slice(0, i + 1).join('/') + '/index.html');
         }
 
-        // Try each candidate in order until one succeeds, otherwise fall back to site root.
         (function tryNext(i) {
           if (i >= candidates.length) {
-            // Nothing worked — redirect to site root
             window.location.replace('/');
             return;
           }
 
           tryFetchIndex(candidates[i]).then(function (html) {
             if (html) {
-              // Replace document with index.html so the SPA can hydrate and handle the current URL
               document.open();
               document.write(html);
               document.close();
-              // Keep the original URL in the address bar for SPA routing
               history.replaceState({}, '', location.pathname + location.search + location.hash);
             } else {
               tryNext(i + 1);
